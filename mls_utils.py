@@ -73,10 +73,10 @@ def tune_hyperparameters(X_train, y_train, model_type):
         param_grid = {'alpha': [0.1, 1, 10]}
         model = Lasso()
     elif model_type == 'random_forest':
-        param_grid = {'n_estimators': [200], 
+        param_grid = {'n_estimators': [50,100,200], 
                       'max_depth': [None], 
-                      'min_samples_split': [2], 
-                      'min_samples_leaf': [1]}
+                      'min_samples_split': [2, 4, 10], 
+                      'min_samples_leaf': [1, 2, 4]}
         model = RandomForestRegressor()
     else:
         raise ValueError(f"Model type '{model_type}' is not supported for hyperparameter tuning.")

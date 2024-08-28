@@ -1,0 +1,16 @@
+# NLP 
+#
+#Data Sources: New York Times API based on Real Estate, Federal Reserve, Interest Rate, Home Selling
+#            General news articles from 2019 utilized to increase article data set: https://huggingface.co/#            datasets/Zihan1004/FNSPID
+#
+# Required modules:
+# pip install vaderSentiment
+# pip install transformers seaborn matplotlib
+
+# API's
+# nyt_api_jupyter3_federal reserve.ipynb
+# nyt_api_jupyter3_home_sales.ipynb
+# nyt_api_jupyter3_real_estate.ipynb
+# Colab Programs
+# pytorch (1).ipynb
+# vader.ipynb

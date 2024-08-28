@@ -6,7 +6,7 @@ from sklearn.linear_model import Ridge, Lasso
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.svm import SVR
 from sklearn.neighbors import KNeighborsRegressor
-from sklearn.metrics import mean_squared_error, r2_score, precision_recall_fscore_support, accuracy_score
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, precision_recall_fscore_support, accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.feature_selection import SelectFromModel
@@ -95,9 +95,11 @@ def evaluate_model(model, X_train, X_test, y_train, y_test):
     y_test_pred = model.predict(X_test)
     train_mse = mean_squared_error(y_train, y_train_pred)
     test_mse = mean_squared_error(y_test, y_test_pred)
+    train_mae = mean_absolute_error(y_train, y_train_pred)
+    test_mae = mean_absolute_error(y_test, y_test_pred)
     train_r2 = r2_score(y_train, y_train_pred)
     test_r2 = r2_score(y_test, y_test_pred)
-    return train_mse, test_mse, train_r2, test_r2
+    return train_mse, test_mse, train_mae, test_mae, train_r2, test_r2
 
 def select_features(X_train, y_train, model=None):
     if model is None:
